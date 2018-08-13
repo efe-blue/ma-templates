@@ -1,0 +1,39 @@
+# Node.js
+node_modules
+npm-debug.log
+tmp
+# package-lock.json
+
+# Windows
+Thumbs.db
+
+# Mac
+.DS_Store
+
+# WebStorm
+.idea/
+*.ipr
+*.iws
+*.iml
+
+# NPM
+*.tgz
+
+*.orig
+*.log
+
+yarn.lock
+
+coverage
+
+.nyc_output/
+
+.vscode/
+
+lib/
+dist/
+es/
+public/
+logs/
+output/
+
