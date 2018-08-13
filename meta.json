@@ -3,6 +3,10 @@
     {
       "name": "empty",
       "description": "官方空模板"
+    },
+    {
+      "name": "rap-ai",
+      "description": "嘻哈模板"
     }
   ],
   "github": [
