@@ -18,12 +18,6 @@ const path = require('path');
 let development = (argv.development === undefined) ? false : true;
 let production = (argv.production === undefined) ? false : true;
 let test = (argv.test === undefined) ? false : true;
-let taskMap = {
-    pages: ['pages', 'less-compile-page'],
-    bootstrap: ['bootstrap', 'less-compile-app'],
-    images: ['images'],
-    include: ['include']
-};
 
 if (!production && !test) {
     development = true;
@@ -106,8 +100,6 @@ gulp.task('watch', function () {
             del.sync(delPath);
         }
         else {
-            let taskArray = taskMap[taskName];
-            // runSequence(taskArray);
             taskSequence();
         }
     });

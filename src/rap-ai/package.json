@@ -1,7 +1,7 @@
 {
     "name": "rap-ai",
-    "version": "xxx",
-    "description": "中国新说唱小程序模板",
+    "version": "0.0.1",
+    "description": "xxx",
     "scripts": {
         "clean": "rm -rf output",
         "dev": "npm run dev-server",
