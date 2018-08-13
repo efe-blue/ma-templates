@@ -3,10 +3,6 @@
  * @author xxx
  */
 
-/* globals App swan */
-
-/* eslint-disable babel/new-cap */
-
 
 import {config} from './include/config';
 

@@ -1,17 +1,14 @@
 /**
  * @file build
- * @author liuchaofan
+ * @author xxx
  */
 
-/* globals __dirname */
-/* eslint-disable fecs-no-require */
 
 const gulp = require('gulp');
 const less = require('gulp-less');
 const filter = require('gulp-filter');
 const fileinclude = require('gulp-file-include');
 const plumber = require('gulp-plumber');
-// const merge = require('merge-stream');
 const del = require('del');
 let argv = require('yargs').argv;
 const removeCode = require('gulp-remove-code');

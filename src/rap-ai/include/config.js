@@ -1,6 +1,6 @@
 /**
  * @file config.js
- * @author liuchaofan@baidu.com
+ * @author xxx
  */
 
 let devConfig = {

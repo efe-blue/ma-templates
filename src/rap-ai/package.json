@@ -1,7 +1,7 @@
 {
     "name": "rap-ai",
-    "version": "1.0.0",
-    "description": "中国新说唱showcase",
+    "version": "xxx",
+    "description": "中国新说唱小程序模板",
     "scripts": {
         "clean": "rm -rf output",
         "dev": "npm run dev-server",
@@ -14,7 +14,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "ssh://liuchaofan@icode.baidu.com:8235/baidu/efe-blue/rap-ai"
+        "url": ""
     },
     "devDependencies": {
         "del": "^3.0.0",
@@ -28,7 +28,6 @@
         "gulp-remove-code": "^3.0.2",
         "gulp-watch": "^5.0.1",
         "less": "~2.0.0",
-        "merge-stream": "^1.0.1",
         "run-sequence": "^2.2.1",
         "yargs": "^12.0.1"
     }
