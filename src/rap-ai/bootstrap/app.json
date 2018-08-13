@@ -1,0 +1,19 @@
+{
+    "debug": false,
+    "pages": [
+        "pages/index/index"
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#211E2E",
+        "navigationBarTextStyle": "white",
+        "backgroundTextStyle": "light",
+        "enablePullDownRefresh": false,
+        "backgroundColor": "#211E2E"
+    },
+    "networkTimeout": {
+        "request": 30000,
+        "connectSocket": 10000,
+        "uploadFile": 10000,
+        "downloadFile": 10000
+    }
+}

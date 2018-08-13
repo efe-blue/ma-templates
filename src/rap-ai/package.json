@@ -1,0 +1,35 @@
+{
+    "name": "rap-ai",
+    "version": "1.0.0",
+    "description": "中国新说唱showcase",
+    "scripts": {
+        "clean": "rm -rf output",
+        "dev": "npm run dev-server",
+        "dev-server": "node build/dev-server.js",
+        "release": "gulp build --production",
+        "release:dev": "gulp build --development",
+        "release:pro": "npm run clean && gulp build --production",
+        "release:qa": "npm run clean && gulp build --test",
+        "release:watch": "gulp watch"
+    },
+    "repository": {
+        "type": "git",
+        "url": "ssh://liuchaofan@icode.baidu.com:8235/baidu/efe-blue/rap-ai"
+    },
+    "devDependencies": {
+        "del": "^3.0.0",
+        "gulp": "^3.9.1",
+        "gulp-clean": "^0.4.0",
+        "gulp-file-include": "^2.0.1",
+        "gulp-filter": "^5.1.0",
+        "gulp-inline-source": "^3.1.0",
+        "gulp-less": "^3.5.0",
+        "gulp-plumber": "^1.2.0",
+        "gulp-remove-code": "^3.0.2",
+        "gulp-watch": "^5.0.1",
+        "less": "~2.0.0",
+        "merge-stream": "^1.0.1",
+        "run-sequence": "^2.2.1",
+        "yargs": "^12.0.1"
+    }
+}
