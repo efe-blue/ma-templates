@@ -1,4 +1,5 @@
 {
-    "navigationBarTitleText": "Smartapp",
-    "iphoneXSafeAreaBackgroundColor": "#211e2e"
+  "navigationBarTitleText": "",
+  "navigationBarBackgroundColor": "black",
+  "navigationBarTextStyle": "white"
 }

@@ -1,1 +1,1 @@
-<view class="demo">{{msg}}</view>
+<view>{{name}}</view>

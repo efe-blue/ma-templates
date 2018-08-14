@@ -1,10 +1,34 @@
 /**
- * @file index.js
- * @author xxx
+ * @file
+ * @author
  */
 
 Page({
     data: {
-        msg: 'Hello world!'
+        name: 'Hello world!'
+    },
+    onLoad() {
+
+    },
+    onReady() {
+        // Do something when page ready.
+    },
+    onShow() {
+        // Do something when page show.
+    },
+    onHide() {
+        // Do something when page hide.
+    },
+    onUnload() {
+        // Do something when page close.
+    },
+    onPullDownRefresh() {
+        // Do something when pull down.
+    },
+    onReachBottom() {
+        // Do something when page reach bottom.
+    },
+    onShareAppMessage () {
+        // return custom share data when user share.
     }
 });

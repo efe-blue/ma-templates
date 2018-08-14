@@ -1,0 +1,5 @@
+{
+    "pagesPath": "pages",
+    "compoPath": "components",
+    "appJsonPath": "bootstrap/app.json"
+}
