@@ -1,5 +1,6 @@
 {
+    "name": "origin",
     "pagesPath": "pages",
     "compoPath": "components",
-    "appJsonPath": "bootstrap/app.json"
+    "appJsonPath": "app.json"
 }
