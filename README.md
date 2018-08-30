@@ -4,6 +4,13 @@ meta.json中存放所有模板的地址信息
 
 ## 模板添加说明
 
+### 使用方法
+1. `cd ma-templates`
+2. `npm install gulp -g`
+3. `npm install`
+4. 将模板文件放入`src`中(文件名与模板名一致)
+5. `gulp config --name tplName`配置模板相关信息
+
 ### `src`文件夹  
 用于存放模板文件，Eg：origin模板
 * `src/tplName/.ma-cli`
