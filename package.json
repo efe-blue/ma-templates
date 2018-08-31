@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/YUFENG00/ma-templates#readme",
   "dependencies": {
-    "archiver": "^3.0.0",
     "gulp": "^4.0.0",
+    "gulp-zip": "^4.2.0",
     "inquirer": "^6.2.0",
     "minimist": "^1.2.0"
   }

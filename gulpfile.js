@@ -5,7 +5,7 @@
 const fs = require('fs');
 const path = require('path');
 const gulp = require('gulp');
-const archiver = require('archiver');
+const zip = require('gulp-zip');
 const minimist = require('minimist');
 const inquirer = require('inquirer');
 // 命令行参数获取
@@ -130,12 +130,6 @@ gulp.task('config', function (done) {
             };
             answer.own ? metaData.official.push(descData) : metaData.github.push(descData);
             writeFile(metaPath, JSON.stringify(metaData, null, 4));
-            // exec('gulp zip --name ' + argv.name, function (err) {
-            //     if (err) {
-            //         console.log(err);
-            //     }
-            //     done();
-            // });
             done();
         });
     }).catch((err) => {
@@ -147,15 +141,12 @@ gulp.task('config', function (done) {
 /**
  * 压缩模板文件
  */
-gulp.task('zip',function (done) {
-    let dest = fs.createWriteStream(process.cwd() + '/zips/' + argv.name + '.zip');
-    let archive = archiver('zip', {
-        zlib: {level: 9}
-      });
-    archive.directory('src/' + argv.name, false);
-    archive.pipe(dest);
-    archive.finalize();
-    done();
-});
+
+gulp.task('zip', function () {
+    gulp.src('src/' + argv.name + '/*')
+        .pipe(zip(argv.name + '.zip'))
+        .pipe(gulp.dest('zips'))
+    }
+);
 
 gulp.task('default', gulp.series('config', 'zip'));
