@@ -5,7 +5,7 @@
 const fs = require('fs');
 const path = require('path');
 const gulp = require('gulp');
-const zip = require('gulp-jszip');
+const archiver = require('archiver');
 const minimist = require('minimist');
 const inquirer = require('inquirer');
 // 命令行参数获取
@@ -40,10 +40,6 @@ function readFile(p) {
  * @param {Object} data 写入文件的数据
  */
 function writeFile(p, data) {
-    let macliPath = path.join(process.cwd(), 'src/' + argv.name + '/.ma-cli');
-    if (!isExist(macliPath)) {
-        fs.mkdirSync(macliPath);
-    }
     fs.writeFileSync(p, data)
 }
 
@@ -87,12 +83,12 @@ function getConf () {
 function checkName (name, meta) {
     return new Promise((resolve, reject) => {
         if (!name || !meta) {
-            reject();
+            reject('Error in meta.json');
         }
         let list = meta.official.concat(meta.github);
         for (let i = 0; i < list.length; i++) {
             if (list[i].name === name) {
-                reject();
+                reject('template existed.');
             }
         }
         resolve();
@@ -125,7 +121,7 @@ gulp.task('config', function (done) {
                 "compoPath": answer.compoPath,
                 "appJsonPath": answer.appJsonPath
             };
-            let confFilePath = path.join(process.cwd(), 'src/' + argv.name + '/.ma-cli/template.config.json');
+            let confFilePath = path.join(process.cwd(), 'src/' + argv.name + '/.macli.config.json');
             writeFile(confFilePath, JSON.stringify(tplData, null, 4));
 
             let descData = {
@@ -134,15 +130,32 @@ gulp.task('config', function (done) {
             };
             answer.own ? metaData.official.push(descData) : metaData.github.push(descData);
             writeFile(metaPath, JSON.stringify(metaData, null, 4));
-            // 将template压缩
-            gulp.src('./src/' + argv.name)
-                .pipe(zip({
-                    name: argv.name + '.zip',
-                    outpath: './zips'
-                }));
-            });
-    }).catch(() => {
-        console.log('tmmplate name is existed.')
+            // exec('gulp zip --name ' + argv.name, function (err) {
+            //     if (err) {
+            //         console.log(err);
+            //     }
+            //     done();
+            // });
+            done();
+        });
+    }).catch((err) => {
+        console.log(err)
         done();
     });
 });
+
+/**
+ * 压缩模板文件
+ */
+gulp.task('zip',function (done) {
+    let dest = fs.createWriteStream(process.cwd() + '/zips/' + argv.name + '.zip');
+    let archive = archiver('zip', {
+        zlib: {level: 9}
+      });
+    archive.directory('src/' + argv.name, false);
+    archive.pipe(dest);
+    archive.finalize();
+    done();
+});
+
+gulp.task('default', gulp.series('config', 'zip'));
