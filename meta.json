@@ -1,15 +1,15 @@
 {
-  "official": [
-    {
-      "name": "empty",
-      "description": "官方空模板"
-    },
-    {
-      "name": "rap-ai",
-      "description": "爱说唱模板"
-    }
-  ],
-  "github": [
-
-  ]
+    "official": [
+        {
+            "name": "origin",
+            "description": "官方空模板"
+        },
+        {
+            "name": "rap-ai",
+            "description": "爱说唱模板"
+        }
+    ],
+    "github": [
+      
+    ]
 }

@@ -1,0 +1,25 @@
+{
+  "name": "ma-templates",
+  "version": "1.0.0",
+  "description": "templates managed",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YUFENG00/ma-templates.git"
+  },
+  "author": "efe-blue",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YUFENG00/ma-templates/issues"
+  },
+  "homepage": "https://github.com/YUFENG00/ma-templates#readme",
+  "dependencies": {
+    "archiver": "^3.0.0",
+    "gulp": "^4.0.0",
+    "inquirer": "^6.2.0",
+    "minimist": "^1.2.0"
+  }
+}
