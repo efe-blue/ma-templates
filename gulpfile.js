@@ -134,9 +134,7 @@ gulp.task('config', function (done) {
             done();
         });
     }).catch((err) => {
-        console.log(chalk.red('[ERROR]', err));
-        done();
-        process.exit();
+        done(chalk.red(err));
     });
 });
 
@@ -151,6 +149,4 @@ gulp.task('zip', function () {
     }
 );
 
-gulp.task('default', gulp.series('config', 'zip'), function (done) {
-    done();
-});
+gulp.task('default', gulp.series('config', 'zip'));
