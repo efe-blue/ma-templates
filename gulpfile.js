@@ -8,6 +8,7 @@ const gulp = require('gulp');
 const zip = require('gulp-zip');
 const minimist = require('minimist');
 const inquirer = require('inquirer');
+const chalk = require('chalk');
 // 命令行参数获取
 let argv = minimist(process.argv.slice(2));
 // meta.json 文件读取
@@ -101,14 +102,14 @@ function checkName (name, meta) {
 gulp.task('config', function (done) {
     // 命令行模板名
     if (!argv.name) {
-        console.error('template name needed!')
-        console.info('Please try `gulp config --name tplName`');
+        console.error(chalk.red('[ERROR]', 'template name needed!'))
+        console.info(chalk.gray('[INFO]', 'Please try `gulp config --name tplName`'));
         return done();
     }
     // src中是否存在模板文件
     let tplPath = path.join(process.cwd(), 'src/' + argv.name);
     if (!isExist(tplPath)) {
-        console.log('template file do not exist');
+        console.log(chalk.red('[ERROR]', 'template file do not exist'));
         return done();
     }
     // 模板名检查
@@ -133,8 +134,7 @@ gulp.task('config', function (done) {
             done();
         });
     }).catch((err) => {
-        console.log(err)
-        done();
+        done(chalk.red(err));
     });
 });
 
@@ -143,7 +143,7 @@ gulp.task('config', function (done) {
  */
 
 gulp.task('zip', function () {
-    gulp.src('src/' + argv.name + '/*')
+    return gulp.src('src/' + argv.name + '/**/*', {dot: true})
         .pipe(zip(argv.name + '.zip'))
         .pipe(gulp.dest('zips'))
     }
