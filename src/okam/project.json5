@@ -1,0 +1,6 @@
+{
+    appid: 0,
+    description: '<mini program description>',
+    projectname: '<min program name>',
+	miniprogramRoot: './dist'
+}

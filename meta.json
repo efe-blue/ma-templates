@@ -7,9 +7,11 @@
         {
             "name": "rap-ai",
             "description": "爱说唱模板"
+        },
+        {
+            "name": "okam",
+            "description": "okam模板"
         }
     ],
-    "github": [
-      
-    ]
+    "github": []
 }
