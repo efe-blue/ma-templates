@@ -1,0 +1,6 @@
+{
+    "name": "okam",
+    "pagesPath": "src/pages",
+    "compoPath": "src/components",
+    "appJsonPath": "src/app.js"
+}
